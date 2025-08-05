@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:pk_fcm/firebase_msg.dart';
 import 'package:pk_fcm/firebase_options.dart';
 
 void main() async {
@@ -9,6 +10,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform
   );
+
+  await FirebaseMsg().initFCM();
 
   runApp(const MyApp());
 }
